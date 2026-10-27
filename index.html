@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#16110e">
 <meta property="og:type" content="restaurant">
 <meta property="og:title" content="Da’ Terra Espetos e Parrilla">
-<meta property="og:image" content="https://daterraespetoseparrilla.github.io/fotos/tabua-cortes.jpg">
+<meta property="og:image" content="https://daterraespetoseparrilla.github.io/fotos/carne-em-tiras-chapa.jpg">
 <meta property="og:description" content="Brasa acesa, mesa posta. Espetos, parrilla e acompanhamentos à vontade em Campo Grande - MS.">
 <meta property="og:locale" content="pt_BR">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2316110e'/><path d='M32 10c4 9 14 14 14 27a14 14 0 0 1-28 0c0-7 4-11 7-14 0 5 2 8 5 9-2-8 0-15 2-22z' fill='%23e8572a'/></svg>">
@@ -37,7 +37,6 @@
   "sameAs": ["https://www.instagram.com/daterraespetoseparrilla/"],
   "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "122"},
   "openingHoursSpecification": [
-    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "17:00", "closes": "23:00"},
     {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday", "Thursday", "Friday"], "opens": "10:30", "closes": "14:00"},
     {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday", "Thursday", "Friday"], "opens": "17:00", "closes": "23:00"},
     {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday", "Sunday"], "opens": "11:00", "closes": "23:00"}
@@ -104,8 +103,9 @@ section { padding: 76px 0; }
 }
 .topo .container { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
 .marca { display: flex; flex-direction: column; text-decoration: none; color: var(--creme); line-height: 1; }
-.marca img { height: 40px; width: auto; }
-.rodape .marca img { height: 64px; }
+.marca img { height: 40px; width: auto; max-width: none; }
+.rodape .marca { align-self: start; }
+.rodape .marca img { height: auto; width: min(280px, 100%); }
 .logo-capa { margin: 26px 0 14px; }
 .logo-capa img { width: min(560px, 100%); height: auto; filter: drop-shadow(0 6px 24px rgba(0,0,0,.45)); }
 .marca b { font: 700 24px/1 "Oswald", sans-serif; letter-spacing: .04em; }
@@ -278,6 +278,7 @@ section { padding: 76px 0; }
 .horarios { width: 100%; border-collapse: collapse; margin: 6px 0 10px; }
 .horarios td { padding: 10px 0; border-top: 1px dashed var(--linha); vertical-align: top; }
 .horarios td:last-child { text-align: right; font-weight: 500; }
+.horarios small { display: block; font-size: 13px; font-weight: 400; color: var(--texto-suave); margin-bottom: 4px; }
 .horarios tr.hoje td { color: var(--brasa-forte); font-weight: 700; }
 .horarios tr.hoje td:first-child::after { content: " · hoje"; font-weight: 500; font-size: 13px; }
 .info .obs { font-size: 14px; color: var(--texto-suave); margin: 0 0 18px; }
@@ -363,7 +364,7 @@ section { padding: 76px 0; }
       <span class="status" id="status"><i></i><span>Confira nossos horários</span></span>
       <h1 class="logo-capa"><img src="logo-claro.png" alt="Da’ Terra Espetos e Parrilla" width="1845" height="515"></h1>
       <span class="manuscrito">Brasa acesa, mesa posta.</span>
-      <p class="chamada">Carne no ponto, acompanhamentos à vontade com tempero de casa e cerveja gelada. Um cantinho de família na Vila Vilas Boas, em Campo Grande.</p>
+      <p class="chamada">Espetos e parrilla com buffet à vontade, tempero de casa e cerveja gelada. De quarta a sexta tem almoço de marmitex. Um cantinho de família na Vila Vilas Boas, em Campo Grande.</p>
       <div class="acoes">
         <a class="btn btn-zap" data-zap="Olá! Gostaria de fazer um pedido 🔥" href="#" target="_blank" rel="noopener">
           <svg><use href="#i-zap"/></svg> Pedir pelo WhatsApp
@@ -390,7 +391,12 @@ section { padding: 76px 0; }
         <article class="card">
           <div class="ico"><svg><use href="#i-prato"/></svg></div>
           <h3>Tempero de casa</h3>
-          <p>Farofa bem temperada, mandioca macia, maionese caseira e vinagrete fresquinho.</p>
+          <p>Buffet com farofa bem temperada, mandioca macia, maionese gaúcha, arroz, feijão e creme de alho.</p>
+        </article>
+        <article class="card">
+          <div class="ico"><svg><use href="#i-relogio"/></svg></div>
+          <h3>Almoço na semana</h3>
+          <p>De quarta a sexta, das 10h30 às 14h: executivo por R$ 35 e marmitex a partir de R$ 10.</p>
         </article>
         <article class="card">
           <div class="ico"><svg><use href="#i-mesa"/></svg></div>
@@ -400,7 +406,7 @@ section { padding: 76px 0; }
       </div>
       <div class="avontade">
         <b>Espetos e parrilla servem 2, com direito a buffet:</b>
-        <span>Farofa</span><span>Mandioca</span><span>Maionese caseira</span><span>Vinagrete</span>
+        <span>Arroz</span><span>Feijão</span><span>Farofa</span><span>Mandioca</span><span>Maionese gaúcha</span><span>Vinagrete</span><span>Salada de folhas</span><span>Creme de alho</span>
       </div>
     </div>
   </section>
@@ -451,18 +457,23 @@ section { padding: 76px 0; }
       <div class="depoimentos">
         <figure class="depoimento">
           <span class="estrelas">★★★★★</span>
-          <blockquote>“Farofa sensacional e carne sempre no ponto. Mesmo com a casa cheia, a carne fica pronta super rápido.”</blockquote>
-          <figcaption>Cliente, no Google</figcaption>
+          <blockquote>“A comida sempre impecável. Destaque para a farofa sensacional e carne sempre no ponto. Mesmo com a casa cheia, a carne fica pronta super rápido.”</blockquote>
+          <figcaption><b>Bárbara Medeiros</b> · no Google</figcaption>
         </figure>
         <figure class="depoimento">
           <span class="estrelas">★★★★★</span>
-          <blockquote>“Pedimos o contra-filé no espeto, que veio no ponto certo. Acompanhamentos com tempero caseiro, à vontade.”</blockquote>
-          <figcaption>Cliente, no Google</figcaption>
+          <blockquote>“Pedimos o contra-filé no espeto, que veio no ponto certo. Os acompanhamentos são preparados com ótimos ingredientes e tempero caseiro.”</blockquote>
+          <figcaption><b>Kaíque Rodrigues de Almeida</b> · no Google</figcaption>
         </figure>
         <figure class="depoimento">
           <span class="estrelas">★★★★★</span>
-          <blockquote>“Lugar bacana para um almoço, com uma excelente recepção. Tudo simples, mas com um excelente sabor.”</blockquote>
-          <figcaption>Cliente, no Google</figcaption>
+          <blockquote>“Realmente incrível! Suco realmente da fruta, não é polpa! A carne serve duas pessoas e a mandioca estava perfeita. O atendimento é incrível.”</blockquote>
+          <figcaption><b>Angélica Oliveira</b> · no Google</figcaption>
+        </figure>
+        <figure class="depoimento">
+          <span class="estrelas">★★★★★</span>
+          <blockquote>“Lugar bacana para um almoço com uma excelente recepção, tudo muito simples, mas com um excelente sabor.”</blockquote>
+          <figcaption><b>Jonas Bonfante</b> · no Google</figcaption>
         </figure>
       </div>
     </div>
@@ -574,35 +585,48 @@ const WHATSAPP = "5567992468780";
 const FUSO = "America/Campo_Grande";
 
 // Fotos: coloque os arquivos na pasta "fotos" e liste aqui.
-// A primeira aparece grande e também no fundo da capa.
+// A primeira aparece grande na galeria. CAPA é a foto do fundo da primeira tela.
+const CAPA = "fotos/carne-em-tiras-chapa.jpg";
 const FOTOS = [
-  { arquivo: "fotos/tabua-cortes.jpg", legenda: "Cortes na brasa servidos na tábua Da’ Terra" },
+  { arquivo: "fotos/area-externa-noite.jpg", legenda: "Área externa do Da’ Terra iluminada à noite" },
   { arquivo: "fotos/carne-em-tiras-chapa.jpg", legenda: "Carne em tiras na chapa de ferro" },
-  { arquivo: "fotos/queijo-coalho.jpg", legenda: "Queijo coalho grelhado com molho" },
-  { arquivo: "fotos/suco-hortela.jpg", legenda: "Suco natural com hortelã" },
-  { arquivo: "fotos/tabua-espeto.jpg", legenda: "Espeto fatiado na tábua com molho da casa" },
+  { arquivo: "fotos/tabua-de-carne.jpg", legenda: "Tábua de carne na brasa" },
+  { arquivo: "fotos/carne-na-chapa.jpg", legenda: "Corte na chapa direto da parrilla" },
+  { arquivo: "fotos/costela-na-chapa.jpg", legenda: "Costela na chapa" },
   { arquivo: "fotos/queijo-coalho-pao-de-alho.jpg", legenda: "Queijo coalho e pão de alho na brasa" },
+  { arquivo: "fotos/isca-de-tilapia.jpg", legenda: "Isca de tilápia com limão" },
+  { arquivo: "fotos/prato-feito-almoco.jpg", legenda: "Prato feito do almoço" },
+  { arquivo: "fotos/tabua-espeto.jpg", legenda: "Espeto fatiado na tábua com molho da casa" },
+  { arquivo: "fotos/suco-hortela.jpg", legenda: "Suco natural com hortelã" },
+  { arquivo: "fotos/queijo-coalho.jpg", legenda: "Queijo coalho grelhado com molho" },
 ];
 
-// Horários por dia da semana (0 = domingo). Cada faixa é [abre, fecha].
+// Horários por dia da semana (0 = domingo). Cada faixa é [abre, fecha, o que serve].
+const ALMOCO = "almoço: marmitex e prato feito";
+const JANTAR = "jantar: espetos, parrilla e buffet";
 const HORARIOS = {
-  0: [["11:00", "23:00"]],
+  0: [["11:00", "23:00", "espetos, parrilla e buffet"]],
   1: [],
-  2: [["17:00", "23:00"]],
-  3: [["10:30", "14:00"], ["17:00", "23:00"]],
-  4: [["10:30", "14:00"], ["17:00", "23:00"]],
-  5: [["10:30", "14:00"], ["17:00", "23:00"]],
-  6: [["11:00", "23:00"]],
+  2: [],
+  3: [["10:30", "14:00", ALMOCO], ["17:00", "23:00", JANTAR]],
+  4: [["10:30", "14:00", ALMOCO], ["17:00", "23:00", JANTAR]],
+  5: [["10:30", "14:00", ALMOCO], ["17:00", "23:00", JANTAR]],
+  6: [["11:00", "23:00", "espetos, parrilla e buffet"]],
 };
 
 // Cardápio oficial da casa.
 const CARDAPIO = [
+  { id: "almoco", titulo: "Almoço", intro: "De quarta a sexta, das 10h30 às 14h: marmitex e prato feito.", itens: [
+    ["Executivo", "35,00"],
+    ["Marmitex", "25,00"],
+    ["Marmitex pequena", "10,00"],
+  ]},
   { id: "espetos", titulo: "Espetos", intro: "Servem 2 pessoas, com direito a buffet. Os espetos têm 400g in natura.", itens: [
     ["Alcatra Angus (400g)", "95,00"],
     ["Contra filé Angus (400g)", "95,00"],
     ["Filé mignon (400g)", "105,00"],
   ]},
-  { id: "parrilla", titulo: "Parrilla", intro: "Servem 2 pessoas, com direito a buffet.", itens: [
+  { id: "parrilla", titulo: "Parrilla", intro: "Servem 2 pessoas, com direito a buffet. As carnes têm 400g in natura.", itens: [
     ["Picanha fatiada (400g)", "120,00"],
     ["Costela em tiras Angus", "95,00"],
     ["Cupim em tiras (400g)", "95,00"],
@@ -622,6 +646,7 @@ const CARDAPIO = [
   ]},
   { id: "cervejas", titulo: "Cervejas", intro: "Estupidamente geladas.", itens: [
     ["Heineken (600ml)", "20,00"],
+    ["Stella Pure Gold", "20,00"],
     ["Original (600ml)", "18,00"],
     ["Brahma (600ml)", "12,00"],
     ["Petra (600ml)", "12,00"],
@@ -699,9 +724,9 @@ function agoraEmCampoGrande() {
 const emMin = (h) => { const [a, b] = h.split(":").map(Number); return a * 60 + b; };
 const { dia: hoje, min: agora } = agoraEmCampoGrande();
 const tabela = document.getElementById("horarios");
-[2, 3, 4, 5, 6, 0, 1].forEach((d) => {
+[3, 4, 5, 6, 0, 1, 2].forEach((d) => {
   const faixas = HORARIOS[d];
-  const txt = faixas.length ? faixas.map(([a, f]) => `${fmt(a)} às ${fmt(f)}`).join("<br>") : "Fechado";
+  const txt = faixas.length ? faixas.map(([a, f, o]) => `${fmt(a)} às ${fmt(f)}<small>${o}</small>`).join("") : "Fechado";
   tabela.insertAdjacentHTML("beforeend", `<tr${d === hoje ? ' class="hoje"' : ""}><td>${NOMES[d]}</td><td>${txt}</td></tr>`);
 });
 (function status() {
@@ -710,7 +735,7 @@ const tabela = document.getElementById("horarios");
   let msg;
   if (aberta) {
     el.classList.add("aberto");
-    msg = `Aberto agora · até as ${fmt(aberta[1])}`;
+    msg = `Aberto agora · ${aberta[2].split(":")[0]} até as ${fmt(aberta[1])}`;
   } else {
     const ainda = HORARIOS[hoje].find(([a]) => agora < emMin(a));
     if (ainda) msg = `Fechado agora · abre hoje às ${fmt(ainda[0])}`;
@@ -731,12 +756,12 @@ const tabela = document.getElementById("horarios");
 if (FOTOS.length) {
   document.getElementById("fotos").hidden = false;
   const galeria = document.getElementById("galeria");
-  FOTOS.slice(0, 7).forEach((f) => {
+  FOTOS.forEach((f) => {
     galeria.insertAdjacentHTML("beforeend",
       `<button type="button" data-src="${f.arquivo}"><img src="${f.arquivo}" alt="${f.legenda}" loading="lazy"></button>`);
   });
   const capa = document.querySelector(".capa-foto");
-  capa.style.backgroundImage = `url("${FOTOS[0].arquivo}")`;
+  capa.style.backgroundImage = `url("${CAPA}")`;
   capa.hidden = false;
   capa.parentElement.classList.add("com-foto");
   const zoom = document.getElementById("zoom");
