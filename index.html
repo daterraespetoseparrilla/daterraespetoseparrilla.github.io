@@ -270,6 +270,9 @@ section { padding: 76px 0; }
 .onde { background: var(--creme-2); }
 .onde h2 { font-size: clamp(38px, 8vw, 60px); margin: 14px 0 26px; }
 .onde-grade { display: grid; gap: 18px; }
+.fachada { margin: 0 0 22px; }
+.fachada img { display: block; width: 100%; height: auto; mix-blend-mode: multiply; -webkit-mask-image: radial-gradient(ellipse 72% 70% at 50% 50%, #000 78%, transparent 100%); mask-image: radial-gradient(ellipse 72% 70% at 50% 50%, #000 78%, transparent 100%); }
+.fachada figcaption { text-align: center; font-size: 14px; color: var(--texto-suave); margin-top: 4px; }
 .mapa { border-radius: var(--raio); overflow: hidden; min-height: 300px; background: var(--creme); border: 1px solid var(--linha); }
 .mapa iframe { width: 100%; height: 100%; min-height: 300px; border: 0; display: block; }
 .info { background: #fff; border-radius: var(--raio); padding: 24px; border: 1px solid var(--linha); }
@@ -295,6 +298,8 @@ section { padding: 76px 0; }
 .social a { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; text-decoration: none; background: rgba(246, 238, 227, .07); font-size: 15px; }
 .social svg { width: 18px; height: 18px; }
 .inclusao { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; color: #b8a999; }
+.inclusao + .inclusao { margin-top: 8px; display: flex; }
+.inclusao svg { width: 34px; height: 22px; flex: none; color: var(--ouro); }
 .arco { width: 34px; height: 8px; border-radius: 4px; background: linear-gradient(90deg, #e40303, #ff8c00, #ffed00, #008026, #004dff, #750787); }
 .copy { font-size: 13px; color: #7f7064; border-top: 1px solid rgba(246, 238, 227, .08); padding-top: 18px; }
 
@@ -527,6 +532,10 @@ section { padding: 76px 0; }
     <div class="container">
       <span class="rotulo">Encontre a gente</span>
       <h2>Sua mesa está logo ali.</h2>
+      <figure class="fachada">
+        <img src="fotos/fachada-aquarela.jpg" alt="Pintura em aquarela da área externa do Da’ Terra, com tenda, ombrelones, mesas de madeira e coqueiros" width="1600" height="900" loading="lazy">
+        <figcaption>Já estamos esperando por vocês.</figcaption>
+      </figure>
       <div class="onde-grade">
         <div class="mapa">
           <iframe title="Mapa: Da Terra Espetos e Parrilla" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
@@ -558,6 +567,7 @@ section { padding: 76px 0; }
       <a class="marca" href="#inicio"><img src="logo-claro.png" alt="Da’ Terra Espetos e Parrilla" width="1845" height="515"></a>
       <p style="margin-top:14px">Av. Bom Pastor, 1073 · Vila Vilas Boas · Campo Grande - MS</p>
       <p class="inclusao" style="margin-top:12px"><span class="arco" aria-hidden="true"></span> Um lugar que acolhe a comunidade LGBTQ+.</p>
+      <p class="inclusao"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><ellipse cx="6" cy="9" rx="2.2" ry="2.8"/><ellipse cx="10" cy="5.5" rx="2.2" ry="2.8"/><ellipse cx="14.5" cy="5.5" rx="2.2" ry="2.8"/><ellipse cx="18.5" cy="9" rx="2.2" ry="2.8"/><path d="M12.2 11c-3 0-6.2 4.4-6.2 7 0 2 1.6 2.6 3.2 2.6 1.3 0 2-.6 3-.6s1.7.6 3 .6c1.6 0 3.2-.6 3.2-2.6 0-2.6-3.2-7-6.2-7z"/></svg> Somos pet friendly: seu pet também é bem-vindo.</p>
     </div>
     <div class="social">
       <a href="https://www.instagram.com/daterraespetoseparrilla/" target="_blank" rel="noopener"><svg><use href="#i-insta"/></svg> @daterraespetoseparrilla</a>
