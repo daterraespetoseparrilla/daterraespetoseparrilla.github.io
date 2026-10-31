@@ -8,7 +8,9 @@
 <meta name="theme-color" content="#16110e">
 <meta property="og:type" content="restaurant">
 <meta property="og:title" content="Da’ Terra Espetos e Parrilla">
-<meta property="og:image" content="https://daterraespetoseparrilla.github.io/fotos/carne-em-tiras-chapa.jpg">
+<meta property="og:image" content="https://daterraespetoseparrilla.github.io/fotos/fachada-aquarela.jpg">
+<meta property="og:image:width" content="1600">
+<meta property="og:image:height" content="900">
 <meta property="og:description" content="Brasa acesa, mesa posta. Espetos, parrilla e acompanhamentos à vontade em Campo Grande - MS.">
 <meta property="og:locale" content="pt_BR">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2316110e'/><path d='M32 10c4 9 14 14 14 27a14 14 0 0 1-28 0c0-7 4-11 7-14 0 5 2 8 5 9-2-8 0-15 2-22z' fill='%23e8572a'/></svg>">
@@ -126,8 +128,15 @@ section { padding: 76px 0; }
   min-height: 100svh; display: flex; align-items: center;
 }
 .capa.com-foto { background: var(--carvao); }
-.capa-foto { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: .45; }
-.capa-foto::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(22,17,14,.35) 0%, rgba(22,17,14,.75) 60%, var(--carvao) 100%); }
+/* No celular a pintura fica numa faixa no alto, com o texto logo abaixo. */
+.capa.com-foto { padding-top: calc(56px + 60vw); align-items: flex-start; }
+.capa-foto { position: absolute; top: 56px; left: 0; right: 0; height: 66vw; background-size: cover; background-position: 40% 60%; }
+.capa-foto::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(22,17,14,.05) 0%, rgba(22,17,14,0) 55%, var(--carvao) 100%); }
+@media (min-width: 760px) {
+  .capa.com-foto { padding-top: 120px; align-items: center; }
+  .capa-foto { inset: 0; height: auto; background-position: center; opacity: .6; }
+  .capa-foto::after { background: linear-gradient(90deg, var(--carvao) 0%, rgba(22,17,14,.85) 45%, rgba(22,17,14,.2) 100%); }
+}
 .brasas { position: absolute; inset: 0; pointer-events: none; }
 .brasas span {
   position: absolute; bottom: -10px; width: 5px; height: 5px; border-radius: 50%;
@@ -596,7 +605,7 @@ const FUSO = "America/Campo_Grande";
 
 // Fotos: coloque os arquivos na pasta "fotos" e liste aqui.
 // A primeira aparece grande na galeria. CAPA é a foto do fundo da primeira tela.
-const CAPA = "fotos/carne-em-tiras-chapa.jpg";
+const CAPA = "fotos/fachada-aquarela.jpg";
 const FOTOS = [
   { arquivo: "fotos/area-externa-noite.jpg", legenda: "Área externa do Da’ Terra iluminada à noite" },
   { arquivo: "fotos/carne-em-tiras-chapa.jpg", legenda: "Carne em tiras na chapa de ferro" },
